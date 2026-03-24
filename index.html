@@ -4,13 +4,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Ashish Shoby Jacob · Full Stack Engineer</title>
+
+  <title>Ashish Shoby Jacob | Full Stack Developer Portfolio | PHP, Python, MySQL</title>
+  <meta name="description"
+    content="Official portfolio of Ashish Shoby Jacob, a Full Stack Developer skilled in PHP, Python, JavaScript, MySQL, Django, and cybersecurity projects including AssureGate and ArkTech.">
+  <meta name="keywords"
+    content="Ashish Shoby Jacob, Ashish Shoby, Full Stack Developer, PHP Developer, Python Developer, MySQL, Django, JavaScript, Portfolio, Web Developer, Cybersecurity, AssureGate, ArkTech, BCA Graduate">
+  <meta name="author" content="Ashish Shoby Jacob">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#09090b">
+  <meta name="application-name" content="Ashish Shoby Portfolio">
+
+  <!-- Canonical URL: replace with your final Vercel/custom domain -->
+  <link rel="canonical" href="https://ashishshobyjacob.vercel.app/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ashish Shoby Jacob | Full Stack Developer Portfolio">
+  <meta property="og:description"
+    content="Explore the portfolio of Ashish Shoby Jacob featuring web development, full stack projects, and cybersecurity solutions like AssureGate and ArkTech.">
+  <meta property="og:url" content="https://ashishshobyjacob.vercel.app/">
+  <meta property="og:site_name" content="Ashish Shoby Portfolio">
+  <meta property="og:image" content="https://ashishshobyjacob.vercel.app/uploads/formal%20pic.png">
+  <meta property="og:image:alt" content="Portrait of Ashish Shoby Jacob">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ashish Shoby Jacob | Full Stack Developer Portfolio">
+  <meta name="twitter:description"
+    content="Portfolio of Ashish Shoby Jacob showcasing PHP, Python, MySQL, Django, cybersecurity, and full stack development projects.">
+  <meta name="twitter:image" content="https://ashishshobyjacob.vercel.app/uploads/formal%20pic.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ashish Shoby Jacob",
+    "url": "https://ashishshobyjacob.vercel.app/",
+    "image": "https://ashishshobyjacob.vercel.app/uploads/formal%20pic.png",
+    "jobTitle": "Full Stack Developer",
+    "description": "Full Stack Developer skilled in PHP, Python, JavaScript, MySQL, Django, and cybersecurity-focused web application development.",
+    "email": "mailto:ashishshoby@gmail.com",
+    "telephone": "+91 9526981254",
+    "sameAs": [
+      "https://github.com/ashishshobyjacob",
+      "https://linkedin.com/in/ashish-shoby-jacob-a37612372"
+    ],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Santhigiri College of Computer Sciences"
+    }
+  }
+  </script>
 
   <style>
     :root {
@@ -36,17 +92,19 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background-color: var(--bg);
       color: var(--text);
       font-family: var(--font-body);
       line-height: 1.6;
       overflow-x: hidden;
-      scroll-behavior: smooth;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Background Effects */
     .blob {
       position: fixed;
       filter: blur(120px);
@@ -115,7 +173,6 @@
       z-index: 10;
     }
 
-    /* Navigation */
     nav {
       position: fixed;
       top: 0;
@@ -231,7 +288,6 @@
       color: var(--text);
     }
 
-    /* Typography Utilities */
     .title-large {
       font-family: var(--font-heading);
       font-size: clamp(2.5rem, 8vw, 4.5rem);
@@ -253,7 +309,6 @@
       color: transparent;
     }
 
-    /* Hero Section */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -333,7 +388,6 @@
       }
     }
 
-    /* Section Styles */
     section {
       padding: 8rem 0;
     }
@@ -360,7 +414,6 @@
       display: block;
     }
 
-    /* Cards */
     .card {
       background: rgba(18, 18, 22, 0.6);
       backdrop-filter: blur(20px);
@@ -389,45 +442,12 @@
       box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
     }
 
-    /* About & Skills */
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
     }
 
-    .skill-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .skill-item-header {
-      display: flex;
-      justify-content: space-between;
-      font-weight: 500;
-      margin-bottom: 0.5rem;
-      font-family: var(--font-mono);
-      font-size: 0.9rem;
-    }
-
-    .skill-bar {
-      height: 6px;
-      background: var(--elevated);
-      border-radius: 99px;
-      overflow: hidden;
-    }
-
-    .skill-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      border-radius: 99px;
-      width: 0;
-      transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    /* Projects */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -483,7 +503,6 @@
       border: 1px solid var(--border);
     }
 
-    /* Timeline */
     .timeline {
       position: relative;
       padding-left: 2rem;
@@ -537,7 +556,6 @@
       font-size: 0.95rem;
     }
 
-    /* Contact */
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1.5fr;
@@ -632,7 +650,6 @@
     }
 
     @media (max-width: 992px) {
-
       .hero-grid,
       .about-grid,
       .contact-grid {
@@ -651,7 +668,6 @@
       }
     }
 
-    /* Animations */
     .reveal {
       opacity: 0;
       transform: translateY(30px);
@@ -662,7 +678,7 @@
       opacity: 1;
       transform: translateY(0);
     }
-    /* Typing effect cursor */
+
     .cursor {
       display: inline-block;
       width: 4px;
@@ -682,7 +698,6 @@
       }
     }
 
-    /* New About Section Card Layout */
     .about-card {
       background: rgba(18, 18, 22, 0.6);
       backdrop-filter: blur(20px);
@@ -692,12 +707,14 @@
       display: grid;
       grid-template-columns: 0.8fr 1.2fr;
     }
+
     .about-image-col {
       width: 100%;
       height: 100%;
       min-height: 400px;
       position: relative;
     }
+
     .about-image-col img {
       width: 100%;
       height: 100%;
@@ -706,9 +723,11 @@
       top: 0;
       left: 0;
     }
+
     .about-content-col {
       padding: 3.5rem 3rem;
     }
+
     .about-info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -716,12 +735,14 @@
       margin-top: 2rem;
       margin-bottom: 2.5rem;
     }
+
     .info-item {
       display: flex;
       align-items: center;
       gap: 0.75rem;
       font-size: 0.95rem;
     }
+
     .info-icon {
       color: var(--primary);
       font-size: 1.25rem;
@@ -730,11 +751,13 @@
       justify-content: center;
       width: 24px;
     }
+
     .about-skills-row {
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem;
     }
+
     .about-skills-row .tag {
       background: transparent;
       border: 1px solid rgba(255, 255, 255, 0.15);
@@ -744,21 +767,26 @@
       border-radius: 99px;
       transition: all 0.3s;
     }
+
     .about-skills-row .tag:hover {
       background: var(--primary-dim);
       color: var(--primary);
       border-color: var(--primary);
     }
+
     @media (max-width: 900px) {
       .about-card {
         grid-template-columns: 1fr;
       }
+
       .about-image-col {
         min-height: 350px;
       }
+
       .about-content-col {
         padding: 2rem;
       }
+
       .about-info-grid {
         grid-template-columns: 1fr;
       }
@@ -773,9 +801,9 @@
   <div class="blob blob-3"></div>
   <div class="grid-overlay"></div>
 
-  <nav id="navbar">
+  <nav id="navbar" aria-label="Main navigation">
     <div class="container nav-inner">
-      <a href="#" class="logo">  ashish/ ><span>.</span></a>
+      <a href="#hero" class="logo">ashish/ ><span>.</span></a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -794,8 +822,7 @@
         <div class="reveal">
           <div class="badge">✦ Available for work</div>
           <h1 class="title-large gradient-text">Hi, I'm Ashish <br><span class="gradient-accent" id="typewriter"></span><span class="cursor"></span></h1>
-          <p class="hero-desc">I craft scalable, robust web applications and digital experiences. Combining deep backend
-            knowledge with precise frontend execution.</p>
+          <p class="hero-desc">I craft scalable, robust web applications and digital experiences using PHP, Python, JavaScript, MySQL, and Django, combining strong backend logic with precise frontend execution.</p>
           <div class="hero-actions">
             <a href="#projects" class="btn btn-primary">Explore Work</a>
             <a href="uploads/resume.pdf" download="Ashish_Shoby_Resume.pdf" class="btn btn-outline">
@@ -808,7 +835,7 @@
         </div>
         <div class="hero-image-wrapper reveal" style="transition-delay: 0.2s;">
           <div class="hero-image-bg"></div>
-          <img src="uploads/formal%20pic.png" alt="Ashish Shoby" class="hero-image"
+          <img src="uploads/formal%20pic.png" alt="Ashish Shoby Jacob professional portrait" class="hero-image"
             onerror="this.src='https://images.unsplash.com/photo-1549692520-acc6669e2f0c?q=80&w=800&auto=format&fit=crop'">
         </div>
       </div>
@@ -818,20 +845,20 @@
       <div class="container">
         <div class="about-card reveal">
           <div class="about-image-col">
-            <img src="uploads/formal%20pic.png" alt="Ashish Shoby" onerror="this.src='https://images.unsplash.com/photo-1549692520-acc6669e2f0c?q=80&w=800&auto=format&fit=crop'">
+            <img src="uploads/formal%20pic.png" alt="About Ashish Shoby Jacob" onerror="this.src='https://images.unsplash.com/photo-1549692520-acc6669e2f0c?q=80&w=800&auto=format&fit=crop'">
           </div>
           <div class="about-content-col">
-            <span style="color:var(--primary); font-family:var(--font-mono); font-size:0.8rem; letter-spacing:2px; text-transform:uppercase; margin-bottom:1rem; display:block;">M y &nbsp; S t o r y</span>
+            <span style="color:var(--primary); font-family:var(--font-mono); font-size:0.8rem; letter-spacing:2px; text-transform:uppercase; margin-bottom:1rem; display:block;">My Story</span>
             <h2 class="section-title" style="margin-top:0; margin-bottom: 2rem; text-align: left; font-size: clamp(2rem, 3vw, 2.5rem);">Turning ideas into <span class="gradient-text">digital reality</span></h2>
-            
+
             <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 1.25rem; line-height: 1.7;">
-              Hi, I'm Ashish Shoby Jacob, a passionate full-stack developer. Following my BCA degree, I've been building applications, starting with essential web tools and now working with modern technologies like PHP, Python, JavaScript, and MySQL.
+              Hi, I'm Ashish Shoby Jacob, a passionate full stack developer and BCA graduate. I build modern web applications using PHP, Python, JavaScript, MySQL, and Django, with a strong interest in scalable systems and practical problem solving.
             </p>
             <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 1.25rem; line-height: 1.7;">
-              I'm constantly learning — always exploring new frameworks, algorithms, and best practices to improve my craft. I believe in continuous growth and adapting to the ever-changing world of web development.
+              I'm constantly learning and exploring frameworks, algorithms, secure coding practices, and better development workflows to improve the quality and performance of every project I create.
             </p>
             <p style="color: var(--text-muted); font-size: 1rem; margin-bottom: 2.5rem; line-height: 1.7;">
-              Beyond coding, I enjoy participating in technical challenges and bringing systematic efficiency to everything I build — activities that keep me inspired and innovative in my work.
+              Beyond coding, I enjoy technical challenges, project building, and creating efficient digital solutions that balance functionality, usability, and clean design.
             </p>
 
             <div class="about-info-grid">
@@ -866,7 +893,7 @@
               <span class="tag">MySQL</span>
               <span class="tag">JavaScript</span>
               <span class="tag">Python</span>
-              <span class="tag">UI/UX</span>
+              <span class="tag">Django</span>
             </div>
           </div>
         </div>
@@ -884,23 +911,22 @@
           <div class="card project-card reveal">
             <div class="project-icon">🏛️</div>
             <h3 class="project-title">ArkTech</h3>
-            <p class="project-desc">A comprehensive architect booking system with separate modules for Admins,
-              Architects, and Customers. Features seamless AJAX integration for zero-refresh UX.</p>
+            <p class="project-desc">A comprehensive architect booking system with separate modules for admins, architects, and customers. It features AJAX-powered interactions for a smoother and faster user experience.</p>
             <div class="tags">
               <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">AJAX</span>
             </div>
           </div>
-          
+
           <div class="card project-card reveal" style="transition-delay: 0.3s;">
-  <div class="project-icon">🛡️</div>
-  <h3 class="project-title">AssureGate</h3>
-  <p class="project-desc">AssureGate is a web-based cybersecurity audit and vulnerability management system designed to streamline security auditing, vulnerability tracking, client management, and report generation through dedicated admin, client, and security auditor modules.</p>
-  <div class="tags">
-    <span class="tag">Python</span>
-    <span class="tag">Django</span>
-    <span class="tag">MySQL</span>
-  </div>
-</div>
+            <div class="project-icon">🛡️</div>
+            <h3 class="project-title">AssureGate</h3>
+            <p class="project-desc">AssureGate is a web-based cybersecurity audit and vulnerability management system designed to streamline security auditing, vulnerability tracking, client management, and report generation through dedicated admin, client, and security auditor modules.</p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">Django</span>
+              <span class="tag">MySQL</span>
+            </div>
+          </div>
 
         </div>
       </div>
@@ -919,37 +945,32 @@
               <div class="timeline-item">
                 <h4 class="timeline-title">Bachelor of Computer Application</h4>
                 <div class="timeline-meta">Santhigiri College of Computer Sciences | CGPA 6.9</div>
-                <p class="timeline-desc">Specialized in Web Technologies, DBMS, and Software Engineering methodologies.
-                </p>
+                <p class="timeline-desc">Specialized in web technologies, DBMS, and software engineering methodologies.</p>
               </div>
               <div class="timeline-item">
                 <h4 class="timeline-title">Higher Secondary Education</h4>
                 <div class="timeline-meta">St. Marys HSS Murickassery | CGPA 8.2</div>
-                <p class="timeline-desc">Science stream majoring Biology Science.</p>
+                <p class="timeline-desc">Science stream with a focus on Biology Science.</p>
               </div>
             </div>
           </div>
           <div class="reveal" style="transition-delay: 0.2s;">
-            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 2rem;">Certifications &
-              Extras</h3>
+            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 2rem;">Certifications & Extras</h3>
             <div class="timeline">
               <div class="timeline-item">
                 <h4 class="timeline-title">NPTEL Certification</h4>
                 <div class="timeline-meta">IIT Madras | Python Mastery</div>
-                <p class="timeline-desc">The Joy of Computing using Python - deep dive into algorithms and structural
-                  logic.</p>
+                <p class="timeline-desc">The Joy of Computing using Python with a strong focus on algorithms and logical problem solving.</p>
               </div>
               <div class="timeline-item">
                 <h4 class="timeline-title">Simplilearn Bootcamps</h4>
                 <div class="timeline-meta">Aug 2025</div>
-                <p class="timeline-desc">Completed intense modules on Ethical Hacking 101 and Python Django
-                  fundamentals.</p>
+                <p class="timeline-desc">Completed modules on Ethical Hacking 101 and Python Django fundamentals.</p>
               </div>
               <div class="timeline-item">
                 <h4 class="timeline-title">Leadership & Service</h4>
                 <div class="timeline-meta">NCC Cadet (A & B) & NSS Volunteer</div>
-                <p class="timeline-desc">Developed strong teamwork, discipline, and community service values through 5
-                  active years.</p>
+                <p class="timeline-desc">Developed teamwork, discipline, and service values through five years of active involvement.</p>
               </div>
             </div>
           </div>
@@ -964,9 +985,7 @@
             <div class="reveal">
               <span class="section-subtitle">04. What's next?</span>
               <h2 class="title-large" style="font-size: 3rem;">Get In Touch</h2>
-              <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 1.1rem;">I'm currently looking for new
-                opportunities, and my inbox is always open. Whether you have a question or just want to say hi, I'll try
-                my best to get back to you!</p>
+              <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 1.1rem;">I'm currently looking for new opportunities, and my inbox is always open. Whether you have a question or want to discuss a project, I’ll do my best to get back to you.</p>
 
               <div class="contact-info">
                 <a href="mailto:ashishshoboy@gmail.com" class="contact-item">
@@ -993,14 +1012,14 @@
                     <div class="contact-detail">+91 9526981254</div>
                   </div>
                 </div>
-                <a href="https://linkedin.com/in/ashish-shoby-jacob-a37612372" target="_blank" class="contact-item">
+                <a href="https://linkedin.com/in/ashish-shoby-jacob-a37612372" target="_blank" rel="noopener noreferrer" class="contact-item">
                   <div class="contact-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></div>
                   <div>
                     <div style="font-size: 0.8rem; color: var(--text-muted);">LinkedIn</div>
                     <div class="contact-detail">Connect on LinkedIn</div>
                   </div>
                 </a>
-                <a href="https://github.com/ashishshoby" target="_blank" class="contact-item">
+                <a href="https://github.com/ashishshoby" target="_blank" rel="noopener noreferrer" class="contact-item">
                   <div class="contact-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></div>
                   <div>
                     <div style="font-size: 0.8rem; color: var(--text-muted);">GitHub</div>
@@ -1064,12 +1083,6 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
-          const skillFills = entry.target.querySelectorAll('.skill-fill');
-          if (skillFills.length > 0) {
-            skillFills.forEach(fill => {
-              fill.style.width = fill.getAttribute('data-width');
-            });
-          }
           revealObserver.unobserve(entry.target);
         }
       });
@@ -1094,7 +1107,7 @@
 
       fetch("https://formsubmit.co/ajax/ashishshoby@gmail.com", {
           method: "POST",
-          headers: { 
+          headers: {
               'Content-Type': 'application/json',
               'Accept': 'application/json'
           },
@@ -1132,17 +1145,16 @@
       });
     });
 
-    // Typewriter effect logic
     const roles = ["Full Stack Developer.", "Problem Solver.", "PHP Developer.", "Creative Thinker."];
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
     const typewriterElement = document.getElementById('typewriter');
-    
+
     function typeEffect() {
       if (!typewriterElement) return;
       const currentRole = roles[roleIndex];
-      
+
       if (isDeleting) {
         typewriterElement.textContent = currentRole.substring(0, charIndex - 1);
         charIndex--;
@@ -1150,23 +1162,23 @@
         typewriterElement.textContent = currentRole.substring(0, charIndex + 1);
         charIndex++;
       }
-      
-      let typeSpeed = isDeleting ? 40 : 100; // Erase faster than typing
-      
+
+      let typeSpeed = isDeleting ? 40 : 100;
+
       if (!isDeleting && charIndex === currentRole.length) {
-        typeSpeed = 2000; // Pause at end of word
+        typeSpeed = 2000;
         isDeleting = true;
       } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         roleIndex = (roleIndex + 1) % roles.length;
-        typeSpeed = 500; // Pause before typing new word
+        typeSpeed = 500;
       }
-      
+
       setTimeout(typeEffect, typeSpeed);
     }
-    
+
     document.addEventListener("DOMContentLoaded", function() {
-      setTimeout(typeEffect, 1000); // Small initial delay
+      setTimeout(typeEffect, 1000);
     });
   </script>
 </body>
