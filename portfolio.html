@@ -781,11 +781,7 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="certificates.php">Certificates</a></li>
-        <li><a href="admin.php" style="color:var(--text-dim);font-size:0.8rem;" title="Admin upload area"><svg
-              width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"></path>
-            </svg></a></li>
+        <li><a href="certificates.html">Certificates</a></li>
       </ul>
       <a href="uploads/resume.pdf" download="Ashish_Shoby_Resume.pdf" class="btn btn-primary"
         style="padding: 0.5rem 1.25rem;">Resume</a>
@@ -1037,7 +1033,7 @@
                 </button>
                 <div id="formSuccess"
                   style="display: none; margin-top: 1rem; color: #38bdf8; font-size: 0.9rem; text-align: center;">
-                  Opening email client to send message...</div>
+                  Connecting to mail server...</div>
               </form>
             </div>
           </div>
@@ -1088,30 +1084,52 @@
       const email = document.getElementById('email').value;
       const message = document.getElementById('message').value;
 
-      const subject = `Portfolio Contact from ${name}`;
-      const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-
       const btn = this.querySelector('button');
       const originalText = btn.innerHTML;
-      btn.innerHTML = 'Processing...';
-      document.getElementById('formSuccess').style.display = 'block';
+      btn.innerHTML = 'Sending...';
+      const formSuccess = document.getElementById('formSuccess');
+      formSuccess.style.display = 'block';
+      formSuccess.textContent = 'Connecting to server...';
+      formSuccess.style.color = '#38bdf8';
 
-      setTimeout(() => {
-        const mailtoLink = `mailto:ashishshoby@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        window.location.href = mailtoLink;
-
-        setTimeout(() => {
-          btn.innerHTML = 'Message Processed!';
+      fetch("https://formsubmit.co/ajax/ashishshoby@gmail.com", {
+          method: "POST",
+          headers: { 
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+              name: name,
+              email: email,
+              message: message,
+              _subject: `New portfolio contact from ${name}`
+          })
+      })
+      .then(response => response.json())
+      .then(data => {
+          btn.innerHTML = 'Message Sent!';
           btn.style.background = '#10b981';
+          formSuccess.textContent = 'Awesome! Your message has been sent directly to my inbox.';
+          formSuccess.style.color = '#10b981';
           this.reset();
 
           setTimeout(() => {
-            btn.innerHTML = originalText;
-            btn.style.background = '';
-            document.getElementById('formSuccess').style.display = 'none';
-          }, 3000);
-        }, 1000);
-      }, 500);
+              btn.innerHTML = originalText;
+              btn.style.background = '';
+              formSuccess.style.display = 'none';
+          }, 5000);
+      })
+      .catch(error => {
+          btn.innerHTML = 'Error!';
+          btn.style.background = '#ef4444';
+          formSuccess.textContent = 'Something went wrong. Please try again or email directly.';
+          formSuccess.style.color = '#ef4444';
+          setTimeout(() => {
+              btn.innerHTML = originalText;
+              btn.style.background = '';
+              formSuccess.style.display = 'none';
+          }, 4000);
+      });
     });
 
     // Typewriter effect logic
