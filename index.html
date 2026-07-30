@@ -2366,37 +2366,51 @@
                 fetch('https://formsubmit.co/ajax/ashishshoby@gmail.com', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                        body: JSON.stringify({ name, email, message, _subject: 'New portfolio contact from ' +
-                                name })
+                        body: JSON.stringify({
+                            name: name,
+                            email: email,
+                            message: message,
+                            _subject: 'New Portfolio Contact from ' + name,
+                            _captcha: 'false',
+                            _template: 'table'
+                        })
                     })
-                    .then(response => response.json())
-                    .then(() => {
-                        submitBtn.innerHTML =
-                            '<span style="display:inline-flex;align-items:center;gap:0.5rem;">✓ Message Sent!</span>';
-                        submitBtn.style.background = '#16a34a';
-                        formFeedback.textContent =
-                            'Awesome! Your message landed in my inbox. I\'ll get back to you soon.';
-                        formFeedback.style.color = '#22c55e';
-                        contactForm.reset();
+                    .then(response => {
+                        if (!response.ok) throw new Error('HTTP error ' + response.status);
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data.success === "true" || data.success === true) {
+                            submitBtn.innerHTML =
+                                '<span style="display:inline-flex;align-items:center;gap:0.5rem;">✓ Message Sent!</span>';
+                            submitBtn.style.background = '#16a34a';
+                            formFeedback.textContent =
+                                'Awesome! Your message landed in my inbox. I\'ll get back to you soon.';
+                            formFeedback.style.color = '#22c55e';
+                            contactForm.reset();
+                        } else {
+                            throw new Error(data.message || 'FormSubmit response indicates failure.');
+                        }
                         setTimeout(() => {
                             submitBtn.innerHTML = originalBtnHTML;
                             submitBtn.style.background = '';
                             submitBtn.disabled = false;
                             formFeedback.textContent = '';
-                        }, 4500);
+                        }, 5000);
                     })
-                    .catch(() => {
+                    .catch(err => {
+                        console.error('Contact form submit error:', err);
                         submitBtn.innerHTML = '⚠ Error — Try Again';
                         submitBtn.style.background = '#dc2626';
                         formFeedback.textContent =
-                            'Something went wrong. Please try again or email me directly.';
+                            'Something went wrong. Please check your internet connection or email ashishshoby@gmail.com directly.';
                         formFeedback.style.color = '#ef4444';
                         submitBtn.disabled = false;
                         setTimeout(() => {
                             submitBtn.innerHTML = originalBtnHTML;
                             submitBtn.style.background = '';
                             formFeedback.textContent = '';
-                        }, 4000);
+                        }, 5000);
                     });
             });
         })();
