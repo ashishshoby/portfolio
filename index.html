@@ -33,6 +33,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="assets/index.css">
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -1668,7 +1669,7 @@
                 <div class="hero-image-wrapper reveal" id="heroPhotoWrap" style="transition-delay: 0.15s;">
                     <div class="hero-image-ring"></div>
                     <div class="hero-image-ring"></div>
-                    <img src="uploads/ashish%20shoby.jpeg" alt="Ashish Shoby Jacob professional portrait" class="hero-image">
+                    <div id="lanyard-root"></div>
                     <div class="hero-float-card">📍 Kerala, India</div>
                 </div>
             </div>
@@ -1916,8 +1917,13 @@
                         </div>
                     </div>
                     <div class="reveal" style="transition-delay:0.1s;">
-                        <h3 class="timeline-col-title">🏆 Achievements & Extras</h3>
+                        <h3 class="timeline-col-title">💼 Experience & Achievements</h3>
                         <div class="timeline">
+                            <div class="timeline-item">
+                                <h4 class="timeline-title">Software Developer Intern</h4>
+                                <div class="timeline-meta">Santhisoft Technologies | Dec 2025 – Jul 2026</div>
+                                <p class="timeline-desc">Developed web applications using Python, Django, PHP, JavaScript, and MySQL, focusing on full-stack development, database architecture, API integration, and clean code principles.</p>
+                            </div>
                             <div class="timeline-item">
                                 <h4 class="timeline-title">NPTEL Certification</h4>
                                 <div class="timeline-meta">IIT Madras | Python Mastery</div>
@@ -2388,5 +2394,6 @@
             });
         })();
     </script>
+    <script type="module" src="assets/index.js"></script>
 </body>
 </html>
